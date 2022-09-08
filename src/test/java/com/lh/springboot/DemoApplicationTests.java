@@ -93,6 +93,8 @@ class DemoApplicationTests {
 
     static Stream<String> method() {
         return Stream.of("apple", "banana");
+
+
     }
 
 
