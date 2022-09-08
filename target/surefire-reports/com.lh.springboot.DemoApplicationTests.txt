@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.lh.springboot.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 4.406 s - in com.lh.springboot.DemoApplicationTests

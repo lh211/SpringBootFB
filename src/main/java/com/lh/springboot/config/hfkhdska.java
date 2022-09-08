@@ -1,6 +1,7 @@
 package com.lh.springboot.config;
 
 import com.lh.springboot.Intercept.LoginIntercept;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -13,4 +14,5 @@ public class hfkhdska implements WebMvcConfigurer {
                 .addPathPatterns("/**")
                 .excludePathPatterns("/","/aaabb");
     }
+
 }
