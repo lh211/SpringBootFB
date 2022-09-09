@@ -60,6 +60,7 @@
             <scope>test</scope>
         </dependency>
 
+<!--        springboot2.4以后使用下面的依赖来兼容Junit4-->
 <!--        <dependency>-->
 <!--            <groupId>org.junit.vintage</groupId>-->
 <!--            <artifactId>junit-vintage-engine</artifactId>-->
@@ -71,6 +72,15 @@
 <!--                </exclusion>-->
 <!--            </exclusions>-->
 <!--        </dependency>-->
+
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.17</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

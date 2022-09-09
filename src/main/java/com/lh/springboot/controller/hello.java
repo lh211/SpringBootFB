@@ -1,7 +1,9 @@
 package com.lh.springboot.controller;
 
 import com.lh.springboot.exception.exceptiona;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -9,6 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class hello {
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     @GetMapping("hellow")
     @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
@@ -19,4 +24,14 @@ public class hello {
 
         return "helloworld";
     }
+
+    @GetMapping("sql")
+    public Long sql()  {
+        Long aLong = jdbcTemplate.queryForObject("select count(*) from users", Long.class);
+
+        return aLong;
+    }
+
+
+
 }

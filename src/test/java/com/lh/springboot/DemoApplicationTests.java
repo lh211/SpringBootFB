@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import javax.sql.DataSource;
 import java.time.Duration;
 import java.util.stream.Stream;
 
@@ -24,10 +25,25 @@ class DemoApplicationTests {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    DataSource dataSource;
+
+    @Test
+    void dataSource() {
+
+        System.out.println("当前的数据源是"+dataSource.getClass());
+    }
+
     @Test
     void contextLoads() {
-        Long aLong = jdbcTemplate.queryForObject("select count(*) from users", Long.class);
-        System.out.println(aLong);
+//        Long aLong = jdbcTemplate.queryForObject("select count(*) from users", Long.class);
+//        System.out.println(aLong);
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 10; j++) {
+                System.out.println();
+            }
+
+        }
     }
 
     @Test
