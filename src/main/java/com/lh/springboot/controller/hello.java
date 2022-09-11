@@ -1,6 +1,7 @@
 package com.lh.springboot.controller;
 
 import com.lh.springboot.exception.exceptiona;
+import com.lh.springboot.service.selectservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,6 +15,9 @@ public class hello {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
+
+    @Autowired
+    com.lh.springboot.service.selectservice selectservice;
 
     @GetMapping("hellow")
     @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
@@ -30,6 +34,12 @@ public class hello {
         Long aLong = jdbcTemplate.queryForObject("select count(*) from users", Long.class);
 
         return aLong;
+    }
+
+    @GetMapping("select")
+    public Long sqla()  {
+
+        return selectservice.run();
     }
 
 

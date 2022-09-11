@@ -13,7 +13,8 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.Arrays;
 
-@Configuration
+//@Configuration
+@Deprecated
 public class MyDataSource {
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
