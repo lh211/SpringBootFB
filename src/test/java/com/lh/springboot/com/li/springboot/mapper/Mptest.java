@@ -1,20 +1,27 @@
 package com.lh.springboot.com.li.springboot.mapper;
 
-import com.lh.springboot.Mapper.MpMapper;
-import com.lh.springboot.entity.User;
+
+import com.lh.springboot.service.selectservice;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+import javax.annotation.Resource;
 
+@SpringBootTest
 public class Mptest {
 
-    @Autowired
-    MpMapper mpMapper;
+//    @Qualifier("aaa")
+//    @Autowired
+
+    @Resource(name = "seleceServiceImpl")
+    selectservice aaa;
+
+
     @Test
     void test(){
-        User user = mpMapper.selectById(1L);
-        System.out.println("==========="+user);
+        Long run = aaa.run();
+        System.out.println("==========="+run);
     }
 }
