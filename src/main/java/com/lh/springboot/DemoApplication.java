@@ -8,8 +8,6 @@ import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 public class DemoApplication {
 
     public static void main(String[] args) {
-
-
         SpringApplication.run(DemoApplication.class, args);
     }
 
