@@ -1,22 +1,22 @@
 package com.lh.springboot.controller;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lh.springboot.Mapper.MpMapper;
 import com.lh.springboot.entity.User;
+import com.lh.springboot.entity.Person;
 import com.lh.springboot.exception.exceptiona;
-import com.lh.springboot.service.selectservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Map;
-
 @RestController
+//@ConfigurationProperties(prefix = "person")  //锁定配置文件中的值
+//@Data
 public class hello {
 
     @Autowired
@@ -28,6 +28,12 @@ public class hello {
 
     @Autowired
     MpMapper mpMapper;
+
+    @Value("${person.name:aiaiaiaiai}")
+    private String name;
+
+//    @Autowired
+//    private Person person;
 
     @GetMapping("hellow")
     @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
@@ -55,6 +61,17 @@ public class hello {
 
         return selectservice.run();
     }
+
+
+    @GetMapping("profile")
+    public Person profile()  {
+        Person person = new Person();
+        person.setAge(33);
+        person.setName("dfsa");
+        return person;
+    }
+
+
 
 
 
