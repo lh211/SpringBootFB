@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Component
 @Data
 @ConfigurationProperties(prefix = "person")
-//@Profile("aaa")
+@Profile(value = {"aaa","default","prod"})
 public class Person implements Serializable {
 
     private String name;

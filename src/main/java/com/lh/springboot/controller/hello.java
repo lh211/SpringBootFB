@@ -5,14 +5,17 @@ import com.lh.springboot.Mapper.MpMapper;
 import com.lh.springboot.entity.User;
 import com.lh.springboot.entity.Person;
 import com.lh.springboot.exception.exceptiona;
+//import com.starter.autoconfigure.service.helloservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+
 
 @RestController
 //@ConfigurationProperties(prefix = "person")  //锁定配置文件中的值
@@ -32,8 +35,12 @@ public class hello {
     @Value("${person.name:aiaiaiaiai}")
     private String name;
 
+    @Autowired
+    private Person person;
+//
 //    @Autowired
-//    private Person person;
+//    helloservice helloservice;
+
 
     @GetMapping("hellow")
     @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
@@ -64,12 +71,16 @@ public class hello {
 
 
     @GetMapping("profile")
-    public Person profile()  {
-        Person person = new Person();
-        person.setAge(33);
-        person.setName("dfsa");
-        return person;
+    public String profile()  {
+
+        return person.getAge()+person.getName();
     }
+
+//    @GetMapping("starter")
+//    public String starter()  {
+//        String fdsafdsa = helloservice.sayHello("fdsafdsa");
+//        return fdsafdsa;
+//    }
 
 
 
