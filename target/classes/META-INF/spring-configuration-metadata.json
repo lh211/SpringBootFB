@@ -1,0 +1,28 @@
+{
+  "groups": [
+    {
+      "name": "person",
+      "type": "com.lh.springboot.entity.Person",
+      "sourceType": "com.lh.springboot.entity.Person"
+    },
+    {
+      "name": "spring.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.lh.springboot.config.MyDataSource",
+      "sourceMethod": "dataSource()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "person.age",
+      "type": "java.lang.Integer",
+      "sourceType": "com.lh.springboot.entity.Person"
+    },
+    {
+      "name": "person.name",
+      "type": "java.lang.String",
+      "sourceType": "com.lh.springboot.entity.Person"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/user" method="get">
+    <input value="REST-GET提交" type="submit" />
+</form>
+
+<form action="/user" method="post">
+    <input value="REST-POST提交" type="submit" />
+</form>
+
+<form action="/user" method="post">
+    <input name="_method" type="hidden" value="DELETE"/>
+    <input value="REST-DELETE 提交" type="submit"/>
+</form>
+
+<form action="/user" method="post">
+    <input name="_method" type="hidden" value="PUT" />
+    <input value="REST-PUT提交"type="submit" />
+    <form>
+
+</body>
+</html>
