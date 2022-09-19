@@ -5,7 +5,7 @@ import com.lh.springboot.Mapper.MpMapper;
 import com.lh.springboot.entity.User;
 import com.lh.springboot.entity.Person;
 import com.lh.springboot.exception.exceptiona;
-//import com.starter.autoconfigure.service.helloservice;
+import com.starter.autoconfigure.service.helloservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -37,9 +37,9 @@ public class hello {
 
     @Autowired
     private Person person;
-//
-//    @Autowired
-//    helloservice helloservice;
+
+    @Autowired
+    helloservice helloservice;
 
 
     @GetMapping("hellow")
@@ -76,11 +76,11 @@ public class hello {
         return person.getAge()+person.getName();
     }
 
-//    @GetMapping("starter")
-//    public String starter()  {
-//        String fdsafdsa = helloservice.sayHello("fdsafdsa");
-//        return fdsafdsa;
-//    }
+    @GetMapping("starter")
+    public String starter()  {
+        String fdsafdsa = helloservice.sayHello("fdsafdsa");
+        return fdsafdsa;
+    }
 
 
 
